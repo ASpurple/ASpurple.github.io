@@ -939,7 +939,7 @@ var arr285=[1745,2513,3279,3893,4507,5276,5887,6498,7109,7875,8489,9103]
 var time285=null;
 var x285=0;
 window.onscroll=function(){
-	if(document.body.scrollTop>=780){
+	if(document.body.scrollTop>=780||document.documentElement.scrollTop>=780){
 		var L = parseInt((document.body.clientWidth - 1210)/8);
 		var T = parseInt((document.documentElement.clientHeight - cj283.offsetHeight)/2);
 		cj283.style.left = L+"px";
