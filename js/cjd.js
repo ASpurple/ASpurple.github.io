@@ -955,21 +955,36 @@ for(var i=0;i<cj285.length;i++){
 			if(cj285[i]==this){
 				y285=i;
 				time285=setInterval(function(){
-					if(document.body.scrollTop<arr285[y285]){
+					if((document.body.scrollTop<arr285[y285]&&document.body.scrollTop!=0)||(document.documentElement.scrollTop<arr285[y285]&&document.documentElement.scrollTop!=0)){
 						x285+=50;
 						if(x285>=arr285[y285]){
 							clearInterval(time285);
 							x285=arr285[y285];
 						}
-						document.body.scrollTop=x285;
+						if(document.body.scrollTop!=0){
+							document.body.scrollTop=x285;
+						}
+						else{
+							document.documentElement.scrollTop=x285;
+						}
 					}else{
 						x285-=50;
 						if(x285<=arr285[y285]){
 							clearInterval(time285);
 							x285=arr285[y285];
+							if(document.body.scrollTop!=0){
 							document.body.scrollTop=arr285[y285];
 						}
-						document.body.scrollTop=x285;
+						else{
+							document.documentElement.scrollTop=arr285[y285];
+						}
+						}
+						if(document.body.scrollTop!=0){
+							document.body.scrollTop=x285;
+						}
+						else{
+							document.documentElement.scrollTop=x285;
+						}
 					}
 					
 				},10)
